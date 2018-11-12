@@ -1,6 +1,5 @@
-/**************creating animations with SCSS***********************/
 /***********************8 awesome diffrent spinners***************/
-/******This app was developed and designed by Rotem Narder********/
+/******This was developed and designed by Rotem Narder********/
 
 /***General User Interface's Styling***/
 @import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans" rel="stylesheet');
@@ -11,11 +10,11 @@ $black: #000;
 $back: #cc33ff; 
 
 
-*, *::before, *::after{
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
-body{
+body {
   display: flex;
   flex-wrap: wrap;
   font-family: $font-family;
@@ -25,9 +24,9 @@ body{
   counter-reset: spinnerCount; 
 }
 
-.cell{
+.cell {
   width: 25%;
-  .wrapper{
+  .wrapper {
     position: relative;
     display: flex;
     justify-content: center;
@@ -52,35 +51,35 @@ body{
 
 
 /***Spinners' Styling***/
-.spinner{
+.spinner {
   /*Common styles*/
   width: 4rem;
   height: 4rem;
   /*Individual styles*/
-  &.spinner1{
+  &.spinner1 {
     border: 3px solid rgba($white, .25);
     border-top-color: rgba($black, .5);
     border-radius: 50%;
     animation: rotation .8s ease infinite;
   }
-  &.spinner2{
+  &.spinner2 {
     border: 3px solid transparent;
     border-top-color: rgba($black, .5);
     border-bottom-color: rgba($black, .5);
     border-radius: 50%;
     animation: rotation .8s ease infinite;
   }
-  &.spinner3{
+  &.spinner3 {
     border-top: 3px solid rgba($black, .5);
     border-right: 3px solid transparent;
     border-radius: 50%;
     animation: rotation .8s linear infinite;
   }
-  &.spinner4{
+  &.spinner4 {
     background: rgba($black, .5);
     animation: flip 1.2s ease infinite;
   }
-  &.spinner5{
+  &.spinner5 {
     margin-top: 2rem; 
     overflow: hidden;
     position: relative;
@@ -97,7 +96,7 @@ body{
     }
     
   }
-  &.spinner6{
+  &.spinner6 {
     position: absolute;
     top: 45%;
     left: 50%;
