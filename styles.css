@@ -1,0 +1,192 @@
+/***********************8 awesome diffrent spinners***************/
+/***General User Interface's Styling***/
+@import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans" rel="stylesheet');
+*, *::before, *::after {
+  box-sizing: border-box; }
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  background: #cc33ff;
+  /*Spinner count reference*/
+  counter-reset: spinnerCount;
+}
+  /***Spinners' Styling***/
+  body .cell { width: 25%; }
+    body .cell .wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      height: 10rem;
+      margin: 1rem 1rem 0;
+      padding-top: 2.2rem;
+      background: rgba(255, 255, 255, 0.2); 
+    }
+      body .cell .wrapper::after {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 0.2rem;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.25);
+        /* Increment the section counter */
+        counter-increment: spinnerCount;
+        /* Display the counter on pseudo-elements */
+        content: counter(spinnerCount); 
+      }
+  body .spinner {
+    /*Common styles*/
+    width: 4rem;
+    height: 4rem;
+  }
+    /*Individual styles*/ 
+    body .spinner.spinner1 {
+      border: 3px solid rgba(255, 255, 255, 0.25);
+      border-top-color: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      animation: rotation .8s ease infinite; 
+    }
+    body .spinner.spinner2 {
+      border: 3px solid transparent;
+      border-top-color: rgba(0, 0, 0, 0.5);
+      border-bottom-color: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      animation: rotation .8s ease infinite; 
+    }
+    
+    body .spinner.spinner3 {
+      border-top: 3px solid rgba(0, 0, 0, 0.5);
+      border-right: 3px solid transparent;
+      border-radius: 50%;
+      animation: rotation .8s linear infinite; 
+    }
+    
+    body .spinner.spinner4 {
+      background: rgba(0, 0, 0, 0.5);
+      animation: flip 1.2s ease infinite; 
+    }
+    
+    body .spinner.spinner5 {
+      margin-top: 2rem;
+      overflow: hidden;
+      position: relative;
+      height: .5rem;
+      background: rgba(255, 255, 255, 0.25); 
+    }
+    
+    body .spinner.spinner5::before {
+        content: '';
+        position: absolute;
+        left: -130%;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        animation: progress 4s linear infinite; 
+    }
+    
+    body .spinner.spinner6 {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      background: #fff;
+      border-radius: 50%;
+      animation: pulse 1s ease-in-out infinite;
+      transform: translate(-50%, -50%) scale(0); 
+    }
+
+    body .spinner.spinner7 {
+      position: relative; 
+    }
+      body .spinner.spinner7::before, body .spinner.spinner7::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        transform: translate(-50%, -50%) scale(0); 
+      }
+      body .spinner.spinner7::before {
+        background: #fff;
+        animation: pulse2 2s ease-in-out infinite; 
+      }
+      body .spinner.spinner7::after {
+        background: #fff;
+        animation: pulse2 2s 1s ease-in-out infinite; 
+      }
+    body .spinner.spinner8 {
+      position: relative;
+      perspective: 200px; 
+    }
+      body .spinner.spinner8::before {
+        display: block;
+        content: '';
+        width: 50%;
+        height: 50%;
+        background: rgba(0, 0, 0, 0.5);
+        animation: 2s flipWalker ease infinite; 
+      }
+
+/*** Animations Stying***/
+@keyframes rotation {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } 
+  }
+
+@keyframes flip {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg); }
+  50% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(0deg); }
+  100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-180deg); } 
+  }
+
+@keyframes progress {
+  0% {
+    left: -130%;
+    background: rgba(0, 0, 0, 0.5); }
+  50% {
+    left: 130%;
+    background: rgba(0, 0, 0, 0.5); }
+  51% {
+    background: rgba(255, 255, 255, 0.5); }
+  100% {
+    background: rgba(255, 255, 255, 0.5); } 
+  }
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1; }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0; } 
+  }
+
+@keyframes pulse2 {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1; }
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0; } 
+  }
+
+@keyframes flipWalker {
+  0% {
+    transform: translate(0, 0) rotateX(0) rotateY(0); }
+  25% {
+    transform: translate(100%, 0) rotateX(0) rotateY(180deg); }
+  50% {
+    transform: translate(100%, 100%) rotateX(-180deg) rotateY(180deg); }
+  75% {
+    transform: translate(0, 100%) rotateX(-180deg) rotateY(360deg); }
+  100% {
+    transform: translate(0, 0) rotateX(0) rotateY(360deg); } 
+  }
