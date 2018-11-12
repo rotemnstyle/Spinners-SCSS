@@ -34,7 +34,7 @@ body {
     margin: 1rem 1rem 0;
     padding-top: 2.2rem;
     background: rgba($white, .2);  
-    &::after{
+    &::after {
       position: absolute;
       bottom: 0;
       width: 100%;
@@ -85,7 +85,7 @@ body {
     position: relative;
     height: .5rem;
     background: rgba($white, .25);
-    &::before{
+    &::before {
       content: '';
       position: absolute;
       left: -130%;
@@ -105,7 +105,7 @@ body {
     animation: pulse 1s ease-in-out infinite;
     transform: translate(-50%, -50%) scale(0);
   }
-  &.spinner7{
+  &.spinner7 {
     position: relative;
     &::before, &::after{
       content: '';
@@ -117,19 +117,19 @@ body {
       border-radius: 50%;
       transform: translate(-50%, -50%) scale(0);
     }
-    &::before{
+    &::before {
       background: $white;
       animation: pulse2 2s ease-in-out infinite;
     }
-    &::after{
+    &::after {
       background: $white;
       animation: pulse2 2s 1s ease-in-out infinite;
     }
   }
-  &.spinner8{
+  &.spinner8 {
     position: relative;
     perspective: 200px;
-    &::before{
+    &::before {
       display: block;
       content: '';
       width: 50%;
@@ -142,7 +142,7 @@ body {
 
 
 /*** Animations Stying***/
-@keyframes rotation{
+@keyframes rotation {
   from{
     transform: rotate(0deg);
   }
@@ -151,7 +151,7 @@ body {
   }
 }
 
-@keyframes flip{
+@keyframes flip {
   0%{
     transform: perspective(120px) rotateX(0deg) rotateY(0deg);
   }
@@ -163,7 +163,7 @@ body {
   }
 }
 
-@keyframes progress{
+@keyframes progress {
   0%{
     left: -130%;
     background: rgba($black, .5);
@@ -180,7 +180,7 @@ body {
   }
 }
 
-@keyframes pulse{
+@keyframes pulse {
   0%{
     transform: translate(-50%, -50%) scale(0);
     opacity: 1;
@@ -191,7 +191,7 @@ body {
   }
 }
 
-@keyframes pulse2{
+@keyframes pulse2 {
   0%, 100%{
     transform: translate(-50%, -50%) scale(0);
     opacity: 1;
@@ -202,7 +202,7 @@ body {
   }
 }
 
-@keyframes flipWalker{
+@keyframes flipWalker {
   0%{
     transform: translate(0, 0) rotateX(0) rotateY(0);
   }
